@@ -27,17 +27,3 @@ def write_csv(path, rows, headers):
         raise
 
 
-def main():
-    parser = argparse.ArgumentParser(description="Generate a sample CSV file.")
-    parser.add_argument("-o", "--output", default="output.csv", help="Output CSV file path")
-    parser.add_argument("-n", "--rows", type=int, default=10, help="Number of data rows to generate")
-    args = parser.parse_args()
-
-    headers = ["id", "name", "email", "age"]
-    rows = generate_rows(args.rows)
-    write_csv(args.output, rows, headers)
-    print(f"Wrote {args.rows} rows to {args.output}")
-
-
-if __name__ == "__main__":
-    main()
